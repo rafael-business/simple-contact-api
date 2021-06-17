@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
+use Illuminate\Http\Request;
+use App\Models\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::resource('contacts', ContactController::class);
+
+Route::get('/contacts/{id}/delete', function ($id) {
+    $contact = Contact::find($id);
+    return view('contacts_delete', ['id' => $id, 'nome' => $contact->nome]);
 });

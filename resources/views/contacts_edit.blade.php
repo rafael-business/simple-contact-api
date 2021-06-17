@@ -5,15 +5,15 @@
                 @method('PUT')
                 <div class="field">
                     <label for="nome">Nome</label>
-                    <input type="text" size="45" name="nome" value="{{ $contact->nome }}" />
+                    <input type="text" maxlength="45" name="nome" value="{{ $contact->nome }}" />
                 </div>
                 <div class="field">
                     <label for="email">E-mail</label>
-                    <input type="text" size="90" name="email" value="{{ $contact->email }}" />
+                    <input type="text" maxlength="90" name="email" value="{{ $contact->email }}" />
                 </div>
                 <div class="field">
                     <label for="telefone">Telefone</label>
-                    <input type="text" size="15" name="telefone" value="{{ $contact->telefone }}" />
+                    <input type="text" maxlength="15" name="telefone" value="{{ $contact->telefone }}" />
                 </div>
                 <input class="btn btn_salvar" type="submit" value="Salvar" />
                 @csrf
